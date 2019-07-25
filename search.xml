@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[P1156 垃圾陷阱]]></title>
+    <url>%2F2019%2F07%2F25%2FP1156%2F</url>
+    <content type="text"><![CDATA[12345678910111213141516171819202122232425262728293031#include&lt;bits/stdc++.h&gt;using namespace std;struct data&#123; int t,f,h;&#125;ct[2001];bool cm(data a,data b)&#123; return a.t&lt;b.t;&#125;int dp[200]=&#123;10&#125;;//到i高度还有多少时间 int d,g,t,dnow;int main()&#123; ios::sync_with_stdio(0); cin&gt;&gt;d&gt;&gt;g; for(int i=1;i&lt;=g;i++) cin&gt;&gt;ct[i].t&gt;&gt;ct[i].f&gt;&gt;ct[i].h; sort(ct+1,ct+g+1,cm); for(int i=1;i&lt;=g;i++)&#123; for(int j=d;j&gt;=0;j--)&#123; if(dp[j]&gt;=ct[i].t)&#123; if(j+ct[i].h&gt;=d)&#123; cout&lt;&lt;ct[i].t; return 0; &#125; dp[j+ct[i].h]=max(dp[j+ct[i].h],dp[j]); dp[j]+=ct[i].f; &#125; &#125; &#125; cout&lt;&lt;dp[0]; return 0;&#125;]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[test]]></title>
     <url>%2F2019%2F07%2F15%2Ftest%2F</url>
     <content type="text"><![CDATA[Test is a good day]]></content>
