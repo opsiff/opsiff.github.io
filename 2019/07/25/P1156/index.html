@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-CN">
+<html class="theme-next pisces use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -72,7 +72,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Pisces',
     version: '6.7.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: false,
@@ -96,17 +96,18 @@
 
 
 
-  <meta name="description" content="12345678910111213141516171819202122232425262728293031#include&amp;lt;bits/stdc++.h&amp;gt;using namespace std;struct data&amp;#123;	int t,f,h;&amp;#125;ct[2001];bool cm(data a,data b)&amp;#123;	return a.t&amp;lt;b.t;&amp;#125;in">
+  <meta name="description" content="题意：d深，10能量，一小时能量减一，n个物品有投入时间，高度，能量的属性，问何时可以达到d深或最长时间">
+<meta name="keywords" content="luogu,dp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="P1156 垃圾陷阱">
 <meta property="og:url" content="http://yoursite.com/2019/07/25/P1156/index.html">
 <meta property="og:site_name" content="Opsiff`s Blog">
-<meta property="og:description" content="12345678910111213141516171819202122232425262728293031#include&amp;lt;bits/stdc++.h&amp;gt;using namespace std;struct data&amp;#123;	int t,f,h;&amp;#125;ct[2001];bool cm(data a,data b)&amp;#123;	return a.t&amp;lt;b.t;&amp;#125;in">
+<meta property="og:description" content="题意：d深，10能量，一小时能量减一，n个物品有投入时间，高度，能量的属性，问何时可以达到d深或最长时间">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-25T03:55:31.663Z">
+<meta property="og:updated_time" content="2019-07-28T03:20:18.593Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="P1156 垃圾陷阱">
-<meta name="twitter:description" content="12345678910111213141516171819202122232425262728293031#include&amp;lt;bits/stdc++.h&amp;gt;using namespace std;struct data&amp;#123;	int t,f,h;&amp;#125;ct[2001];bool cm(data a,data b)&amp;#123;	return a.t&amp;lt;b.t;&amp;#125;in">
+<meta name="twitter:description" content="题意：d深，10能量，一小时能量减一，n个物品有投入时间，高度，能量的属性，问何时可以达到d深或最长时间">
 
 
 
@@ -173,7 +174,7 @@
 
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
-
+<a href="https://github.com/opsiff" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta">
@@ -254,9 +255,6 @@
   
 
   
-    
-
-  
 
   
     <div class="site-search">
@@ -297,6 +295,9 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
+            
+
           
           <div id="content" class="content">
             
@@ -360,12 +361,24 @@
                 
               
 
-              <time title="创建时间：2019-07-25 11:49:03 / 修改时间：11:55:31" itemprop="dateCreated datePublished" datetime="2019-07-25T11:49:03+08:00">2019-07-25</time>
+              <time title="创建时间：2019-07-25 11:49:03" itemprop="dateCreated datePublished" datetime="2019-07-25T11:49:03+08:00">2019-07-25</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-28 11:20:18" itemprop="dateModified" datetime="2019-07-28T11:20:18+08:00">2019-07-28</time>
               
             
           </span>
@@ -392,7 +405,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">4.1k</span>
+                <span title="本文字数">4.2k</span>
               
 
               
@@ -426,7 +439,10 @@
       
 
       
-        <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">data</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> t,f,h;</span><br><span class="line">&#125;ct[<span class="number">2001</span>];</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cm</span><span class="params">(data a,data b)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a.t&lt;b.t;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> dp[<span class="number">200</span>]=&#123;<span class="number">10</span>&#125;;<span class="comment">//到i高度还有多少时间 </span></span><br><span class="line"><span class="keyword">int</span> d,g,t,dnow;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;d&gt;&gt;g;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=g;i++)</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;ct[i].t&gt;&gt;ct[i].f&gt;&gt;ct[i].h;</span><br><span class="line">	sort(ct+<span class="number">1</span>,ct+g+<span class="number">1</span>,cm);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=g;i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=d;j&gt;=<span class="number">0</span>;j--)&#123;</span><br><span class="line">			<span class="keyword">if</span>(dp[j]&gt;=ct[i].t)&#123;</span><br><span class="line">				<span class="keyword">if</span>(j+ct[i].h&gt;=d)&#123;</span><br><span class="line">					<span class="built_in">cout</span>&lt;&lt;ct[i].t;</span><br><span class="line">					<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				dp[j+ct[i].h]=max(dp[j+ct[i].h],dp[j]);</span><br><span class="line">				dp[j]+=ct[i].f;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;dp[<span class="number">0</span>];</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>题意：d深，10能量，一小时能量减一，n个物品有投入时间，高度，能量的属性，问何时可以达到d深或最长时间</p>
+<a id="more"></a>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">data</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> t,f,h;</span><br><span class="line">&#125;ct[<span class="number">2001</span>];</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cm</span><span class="params">(data a,data b)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a.t&lt;b.t;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> dp[<span class="number">200</span>]=&#123;<span class="number">10</span>&#125;;<span class="comment">//到i高度还有多少时间 </span></span><br><span class="line"><span class="keyword">int</span> d,g,t,dnow;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;d&gt;&gt;g;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=g;i++)</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;ct[i].t&gt;&gt;ct[i].f&gt;&gt;ct[i].h;</span><br><span class="line">	sort(ct+<span class="number">1</span>,ct+g+<span class="number">1</span>,cm);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=g;i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=d;j&gt;=<span class="number">0</span>;j--)&#123;</span><br><span class="line">			<span class="keyword">if</span>(dp[j]&gt;=ct[i].t)&#123;</span><br><span class="line">				<span class="keyword">if</span>(j+ct[i].h&gt;=d)&#123;</span><br><span class="line">					<span class="built_in">cout</span>&lt;&lt;ct[i].t;</span><br><span class="line">					<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				dp[j+ct[i].h]=max(dp[j+ct[i].h],dp[j]);</span><br><span class="line">				dp[j]+=ct[i].f;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;dp[<span class="number">0</span>];</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -449,6 +465,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/luogu/" rel="tag"># luogu</a>
+          
+            <a href="/tags/dp/" rel="tag"># dp</a>
+          
+        </div>
+      
 
       
       
@@ -467,6 +491,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/28/P1641-SCOI2010-生成字符串/" rel="prev" title="P1641 [SCOI2010]生成字符串">
+                P1641 [SCOI2010]生成字符串 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -527,7 +555,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -535,6 +563,23 @@
 
               
 
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
               
             </nav>
           
@@ -582,7 +627,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">1k</span>
+    <span title="站点总字数">2k</span>
   
 
   
@@ -591,7 +636,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1 分钟</span>
+    <span title="站点阅读时长">2 分钟</span>
   
 </div>
 
@@ -604,7 +649,7 @@
 
 
 
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v6.7.0</div>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v6.7.0</div>
 
 
 
@@ -690,6 +735,13 @@
 
   
   
+
+
+  <script src="/js/src/affix.js?v=6.7.0"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=6.7.0"></script>
+
+
 
   
   <script src="/js/src/scrollspy.js?v=6.7.0"></script>

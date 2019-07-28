@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[P1641 [SCOI2010]生成字符串]]></title>
+    <url>%2F2019%2F07%2F28%2FP1641-SCOI2010-%E7%94%9F%E6%88%90%E5%AD%97%E7%AC%A6%E4%B8%B2%2F</url>
+    <content type="text"><![CDATA[题意是n个1，m个0，问有多少种组合使在前k个数中1不少于0 1234567891011121314151617181920212223242526272829303132333435363738#include&lt;bits/stdc++.h&gt;using namespace std;typedef unsigned long long ull;typedef unsigned int uint;typedef long long ll;#define infi 0x3f3f3f3f#define fi first#define se second#define mp make_pairconst int N=2e6+1,mod=20100403;int n,m,fact[N],inv[N];//inv表示N!的逆元 ，fact表示N!modp int qpow(int a, int b) &#123;//快速幂 int res=1; while(b)&#123; if(b&amp;1)res=1ll*res*a%mod; a=1ll*a*a%mod; b&gt;&gt;=1; &#125; return res;&#125;int C(int x, int y) &#123; int z=1ll*fact[x]*inv[y]%mod; return 1ll*z*inv[x-y]%mod;&#125;// ans= c(n)(n+m)-c(n-1)(n+m) zcyint main()&#123; int ans,n,m,t=1,e=0; ios::sync_with_stdio(0); cin&gt;&gt;n&gt;&gt;m; fact[0]=1; for(int i=1;i&lt;=n+m;i++) fact[i]=(1ll*fact[i-1]*i)%mod; inv[n+m]=qpow(fact[n+m],mod-2); for (int i=n+m-1;i&gt;=0;i--) inv[i]=1ll*inv[i+1]*(i+1)%mod; cout&lt;&lt;(C(n+m,m)-C(n+m,m-1)+mod)%mod; return 0;&#125;]]></content>
+      <tags>
+        <tag>luogu</tag>
+        <tag>乘法逆元</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[P1156 垃圾陷阱]]></title>
     <url>%2F2019%2F07%2F25%2FP1156%2F</url>
-    <content type="text"><![CDATA[12345678910111213141516171819202122232425262728293031#include&lt;bits/stdc++.h&gt;using namespace std;struct data&#123; int t,f,h;&#125;ct[2001];bool cm(data a,data b)&#123; return a.t&lt;b.t;&#125;int dp[200]=&#123;10&#125;;//到i高度还有多少时间 int d,g,t,dnow;int main()&#123; ios::sync_with_stdio(0); cin&gt;&gt;d&gt;&gt;g; for(int i=1;i&lt;=g;i++) cin&gt;&gt;ct[i].t&gt;&gt;ct[i].f&gt;&gt;ct[i].h; sort(ct+1,ct+g+1,cm); for(int i=1;i&lt;=g;i++)&#123; for(int j=d;j&gt;=0;j--)&#123; if(dp[j]&gt;=ct[i].t)&#123; if(j+ct[i].h&gt;=d)&#123; cout&lt;&lt;ct[i].t; return 0; &#125; dp[j+ct[i].h]=max(dp[j+ct[i].h],dp[j]); dp[j]+=ct[i].f; &#125; &#125; &#125; cout&lt;&lt;dp[0]; return 0;&#125;]]></content>
+    <content type="text"><![CDATA[题意：d深，10能量，一小时能量减一，n个物品有投入时间，高度，能量的属性，问何时可以达到d深或最长时间 12345678910111213141516171819202122232425262728293031#include&lt;bits/stdc++.h&gt;using namespace std;struct data&#123; int t,f,h;&#125;ct[2001];bool cm(data a,data b)&#123; return a.t&lt;b.t;&#125;int dp[200]=&#123;10&#125;;//到i高度还有多少时间 int d,g,t,dnow;int main()&#123; ios::sync_with_stdio(0); cin&gt;&gt;d&gt;&gt;g; for(int i=1;i&lt;=g;i++) cin&gt;&gt;ct[i].t&gt;&gt;ct[i].f&gt;&gt;ct[i].h; sort(ct+1,ct+g+1,cm); for(int i=1;i&lt;=g;i++)&#123; for(int j=d;j&gt;=0;j--)&#123; if(dp[j]&gt;=ct[i].t)&#123; if(j+ct[i].h&gt;=d)&#123; cout&lt;&lt;ct[i].t; return 0; &#125; dp[j+ct[i].h]=max(dp[j+ct[i].h],dp[j]); dp[j]+=ct[i].f; &#125; &#125; &#125; cout&lt;&lt;dp[0]; return 0;&#125;]]></content>
+      <tags>
+        <tag>luogu</tag>
+        <tag>dp</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[test]]></title>
