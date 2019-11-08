@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Kruskal最小生成树模板]]></title>
+    <url>%2F2019%2F11%2F08%2FKruskal%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E6%A8%A1%E6%9D%BF%2F</url>
+    <content type="text"><![CDATA[Kruskal最小生成树模板 12345678910111213141516171819202122232425262728293031323334#include&lt;bits/stdc++.h&gt;using namespace std;int n,m,f[5001],ans,t;struct s&#123; int u,v,w;&#125;e[200001];bool cmp(s a, s b)&#123; return a.w&lt;b.w;&#125;int find(int find_x)&#123; return (f[find_x]==find_x)?(find_x):(f[find_x]=find(f[find_x]));&#125;int main()&#123; cin&gt;&gt;n&gt;&gt;m; for(int i=0;i&lt;=n;i++) f[i]=i; for(int i=0;i&lt;m;i++) cin&gt;&gt;e[i].u&gt;&gt;e[i].v&gt;&gt;e[i].w; sort(e,e+m,cmp); for(int i=0;i&lt;m;i++)&#123; int a=find(e[i].u); int b=find(e[i].v); if(f[a]!=f[b])&#123; f[a]=b; ans+=e[i].w; t++; &#125; &#125; if(t==n-1) cout&lt;&lt;ans; else cout&lt;&lt;"orz"; return 0;&#125;]]></content>
+      <tags>
+        <tag>luogu</tag>
+        <tag>最小生成树</tag>
+        <tag>kruskal</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[P1641 [SCOI2010]生成字符串]]></title>
     <url>%2F2019%2F07%2F28%2FP1641-SCOI2010-%E7%94%9F%E6%88%90%E5%AD%97%E7%AC%A6%E4%B8%B2%2F</url>
     <content type="text"><![CDATA[题意是n个1，m个0，问有多少种组合使在前k个数中1不少于0 1234567891011121314151617181920212223242526272829303132333435363738#include&lt;bits/stdc++.h&gt;using namespace std;typedef unsigned long long ull;typedef unsigned int uint;typedef long long ll;#define infi 0x3f3f3f3f#define fi first#define se second#define mp make_pairconst int N=2e6+1,mod=20100403;int n,m,fact[N],inv[N];//inv表示N!的逆元 ，fact表示N!modp int qpow(int a, int b) &#123;//快速幂 int res=1; while(b)&#123; if(b&amp;1)res=1ll*res*a%mod; a=1ll*a*a%mod; b&gt;&gt;=1; &#125; return res;&#125;int C(int x, int y) &#123; int z=1ll*fact[x]*inv[y]%mod; return 1ll*z*inv[x-y]%mod;&#125;// ans= c(n)(n+m)-c(n-1)(n+m) zcyint main()&#123; int ans,n,m,t=1,e=0; ios::sync_with_stdio(0); cin&gt;&gt;n&gt;&gt;m; fact[0]=1; for(int i=1;i&lt;=n+m;i++) fact[i]=(1ll*fact[i-1]*i)%mod; inv[n+m]=qpow(fact[n+m],mod-2); for (int i=n+m-1;i&gt;=0;i--) inv[i]=1ll*inv[i+1]*(i+1)%mod; cout&lt;&lt;(C(n+m,m)-C(n+m,m-1)+mod)%mod; return 0;&#125;]]></content>
