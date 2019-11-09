@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[UEFI和传统引导windows的一点区别]]></title>
+    <url>%2F2019%2F11%2F09%2FUEFI%E5%92%8C%E4%BC%A0%E7%BB%9F%E5%BC%95%E5%AF%BCwindows%E7%9A%84%E4%B8%80%E7%82%B9%E5%8C%BA%E5%88%AB%2F</url>
+    <content type="text"><![CDATA[在Windows传统引导中 启动文件项目的值是\Windows\system32\winload.exe 在Windows UEFI 引导中 启动文件项目的值是\Windows\system32\winload.efi 这个问题是我今天在使用VHDX来启动系统的时候遇到的，如果是exe的话就会卡住无法进入系统]]></content>
+      <tags>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Kruskal最小生成树模板]]></title>
     <url>%2F2019%2F11%2F08%2FKruskal%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E6%A8%A1%E6%9D%BF%2F</url>
     <content type="text"><![CDATA[Kruskal最小生成树模板 12345678910111213141516171819202122232425262728293031323334#include&lt;bits/stdc++.h&gt;using namespace std;int n,m,f[5001],ans,t;struct s&#123; int u,v,w;&#125;e[200001];bool cmp(s a, s b)&#123; return a.w&lt;b.w;&#125;int find(int find_x)&#123; return (f[find_x]==find_x)?(find_x):(f[find_x]=find(f[find_x]));&#125;int main()&#123; cin&gt;&gt;n&gt;&gt;m; for(int i=0;i&lt;=n;i++) f[i]=i; for(int i=0;i&lt;m;i++) cin&gt;&gt;e[i].u&gt;&gt;e[i].v&gt;&gt;e[i].w; sort(e,e+m,cmp); for(int i=0;i&lt;m;i++)&#123; int a=find(e[i].u); int b=find(e[i].v); if(f[a]!=f[b])&#123; f[a]=b; ans+=e[i].w; t++; &#125; &#125; if(t==n-1) cout&lt;&lt;ans; else cout&lt;&lt;"orz"; return 0;&#125;]]></content>
